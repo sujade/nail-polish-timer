@@ -11,13 +11,17 @@ const CoatSelect = () => {
 
     return (
         <Container className="text-center">
-            <Row className="d-flex justify-content-evenly"> <p>what kind of layer are we drying this time?</p>
-                <Button onClick={() => {setCoatType("coat")}} id="switcher" variant="outline-danger">coat</Button>
-                <Button onClick={() => {setCoatType("topCoat")}} id="switcher" variant="outline-danger">top coat</Button>
+            <Row className="d-flex justify-content-evenly"><p>what kind of layer are we drying this time?</p>
+                <Button onClick={() => {
+                    setCoatType("coat")
+                }} id="switcher" variant="outline-danger">coat</Button>
+                <Button onClick={() => {
+                    setCoatType("topCoat")
+                }} id="switcher" variant="outline-danger">top coat</Button>
             </Row>
 
 
-            <Timer coatType = {coatType}/>
+            <Timer coatType={coatType}/>
         </Container>
     );
 };

@@ -19,7 +19,7 @@ const Timer = ({coatType}: TimerProps) => {
 
     const [key, setKey] = useState(0);
 
-    const renderTime = ({ remainingTime }: any) => {
+    const renderTime = ({remainingTime}: any) => {
         if (remainingTime === 0) {
             return <div className="timer">All dry! <br/>Another coat?</div>;
         }
@@ -34,32 +34,28 @@ const Timer = ({coatType}: TimerProps) => {
         );
     };
 
-
     return (
         <Container>
             <Row className="mt-4">
-                <Col md={5}></Col>
-                <Col md={2}>
+                <div className="d-flex justify-content-center">
                     <CountdownCircleTimer duration={coatType == "coat" ? 120 : 900}
                                           colors={'#004777'}
                                           isPlaying={isRunning}
                                           key={key}>
                         {renderTime}
                     </CountdownCircleTimer>
-                </Col>
-                <Col md={5}></Col>
+                </div>
             </Row>
-
 
             <Row className="d-flex justify-content-evenly mt-4">
                 <Col md={3}></Col>
-                <Col md={2}><Button variant="outline-success" onClick={() => {
+                <Col className="mt-2" md={2}><Button variant="outline-success" onClick={() => {
                     setIsRunning(true)
                 }}>Start</Button></Col>
-                <Col md={2}><Button variant="outline-success" onClick={() => {
+                <Col className="mt-2"  md={2}><Button variant="outline-success" onClick={() => {
                     setIsRunning(false)
                 }}>Stop</Button></Col>
-                <Col md={2}><Button variant="outline-success" onClick={() => setKey(prevKey => prevKey + 1)}>
+                <Col className="mt-2"  md={2}><Button variant="outline-success" onClick={() => setKey(prevKey => prevKey + 1)}>
                     Restart</Button></Col>
                 <Col md={3}></Col>
             </Row>
